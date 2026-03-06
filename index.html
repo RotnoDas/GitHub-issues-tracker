@@ -25,16 +25,16 @@
                 <fieldset class="w-full">
                     <div class="flex flex-col items-start">
                         <label class="label geist-font font-medium text-[16px] leading-[auto] tracking-[0%] text-[#1F2937]">Username</label>
-                        <input value="admin" type="text" class="input w-full p-4 rounded-lg bg-[#FFFFFF] border border-[#E4E4E7] geist-font font-normal text-[16px] leading-4 tracking-[0%] text-[#71717A] mt-2 mb-1.5 outline-none" placeholder="Enter Username" />
+                        <input id="input-username" value="admin" type="text" class="input w-full p-4 rounded-lg bg-[#FFFFFF] border border-[#E4E4E7] geist-font font-normal text-[16px] leading-4 tracking-[0%] text-[#71717A] mt-2 mb-1.5 outline-none" placeholder="Enter Username" />
                         <p class="geist-font font-normal text-[14px] leading-[auto] tracking-[0%] text-[#4A00FF]">Default: admin</p>
                     </div>
                     <div class="flex flex-col items-start mt-4 mb-6">
                         <label class="label geist-font font-medium text-[16px] leading-[auto] tracking-[0%] text-[#1F2937]">Password</label>
-                        <input value="admin123" type="password" class="input w-full p-4 rounded-lg bg-[#FFFFFF] border border-[#E4E4E7] geist-font font-normal text-[16px] leading-4 tracking-[0%] text-[#71717A] mt-2 mb-1.5 outline-none" placeholder="Enter Password" />
+                        <input id="input-password" value="admin123" type="password" class="input w-full p-4 rounded-lg bg-[#FFFFFF] border border-[#E4E4E7] geist-font font-normal text-[16px] leading-4 tracking-[0%] text-[#71717A] mt-2 mb-1.5 outline-none" placeholder="Enter Password" />
                         <p class="geist-font font-normal text-[14px] leading-[auto] tracking-[0%] text-[#4A00FF]">Default: admin123</p>
                     </div>
                     <div>
-                        <button class="btn w-full p-4 rounded-lg bg-[#4A00FF] geist-font font-semibold text-[16px] leading-4 tracking-[0%] text-[#FFFFFF]">Sign In</button>
+                        <button id="sign-in-button" class="btn w-full p-4 rounded-lg bg-[#4A00FF] geist-font font-semibold text-[16px] leading-4 tracking-[0%] text-[#FFFFFF]">Sign In</button>
                     </div>
                 </fieldset>
             </div>
@@ -52,5 +52,8 @@
             </div>
         </div>
     </main>
+
+    <!-- JavaScript -->
+    <script src="./scripts/login.js"></script>
 </body>
 </html>
