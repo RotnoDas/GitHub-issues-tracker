@@ -10,6 +10,9 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/afae3d2134.js" crossorigin="anonymous"></script>
+
     <!-- CSS -->
     <link rel="stylesheet" href="../styles/style.css">
 </head>
@@ -79,11 +82,50 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="bg-[#FBFBFB] px-6 py-6 rounded-b-lg">
+
+                    <div id="loading-container" class="flex items-center justify-center">
+                        <span class="loading loading-dots loading-xl"></span>
+                    </div>
+
+                    <div id="all-issues-container" class="grid grid-cols-4 gap-3">
+
+                        <div class="issue-card bg-[#FFFFFF] border-t-4 border-[#00A96E] rounded-sm shadow-[0px_3px_6px_rgba(0,0,0,0.08)]">
+                            <div class="border-b border-b-[#E4E4E7] p-4 space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        ${issue.priority === "high" || issue.priority === "medium" ? `<img src="../assets/Open-Status.png" alt="Open Status" class="w-6 h-6">` : `<img src="../assets/Closed- Status .png" alt="Closed Status" class="w-6 h-6">`}
+                                    </div>
+                                    <div>
+                                        ${issue.priority === "high" ? `<p class="w-20 px-3 py-2 bg-[#FEECEC] flex items-center justify-center rounded-[100px] geist-font font-medium text-[16px] leading-[100%] tracking-[0%] text-[#EF4444] uppercase">${issue.priority}</p>` : ${issue.priority === "medium" ? `<p class="w-20 px-3 py-2 bg-[#FEF3C7] flex items-center justify-center rounded-[100px] geist-font font-medium text-[16px] leading-[100%] tracking-[0%] text-[#D97706] uppercase">${issue.priority}</p>` : `<p class="w-20 px-3 py-2 bg-[#ECFDF5] flex items-center justify-center rounded-[100px] geist-font font-medium text-[16px] leading-[100%] tracking-[0%] text-[#059669] uppercase">${issue.priority}</p>`}}
+                                    </div>
+                                    <p class="w-24 px-3 py-2 flex items-center justify-center rounded-[100px] geist-font font-medium text-[16px] leading-[100%] tracking-[0%] text-[#EF4444] uppercase">HIGH</p>
+                                </div>
+                                <div>
+                                    <h1 class="geist-font font-semibold text-[20px] leading-[auto] tracking-[0%] text-[#000000]">Fix navigation menu on mobile devices</h1>
+                                    <p class="geist-font font-normal text-[16px] leading-[auto] tracking-[0%] text-[#64748B]">The navigation menu doesn't collapse properly on mobile devices...</p>
+                                </div>
+                                <div>
+                                    <div class="badge badge-xl p-2 rounded-[100px] bg-[#FEECEC] border border-[#FECACA] geist-font font-medium text-[16px] leading-[100%] tracking-[0%] text-[#EF4444]"><i class="fa-solid fa-bug"></i>BUG</div>
+                                    <div class="badge badge-xl p-2 rounded-[100px] bg-[#FFF8DB] border border-[#FDE68A] geist-font font-medium text-[16px] leading-[100%] tracking-[0%] text-[#D97706]"><i class="fa-solid fa-life-ring"></i>HELP WANTED</div>
+                                    <div class="badge badge-xl p-2 rounded-[100px] bg-[#DEFCE8] border border-[#BBF7D0] geist-font font-medium text-[16px] leading-[100%] tracking-[0%] text-[#16A34A]"><i class="fa-solid fa-wand-magic-sparkles"></i>ENHANCEMENT</div>
+                                </div>
+                            </div>
+                            <div class="p-4 space-y-2">
+                                <p class="geist-font font-normal text-[18px] leading-[auto] tracking-[0%] text-[#64748B]">#1 by john_doe</p>
+                                <p class="geist-font font-normal text-[18px] leading-[auto] tracking-[0%] text-[#64748B]">1/15/2024</p>
+                            </div>
+                        </div>
+
+                    </div>
 
                 </div>
             </div>
         </div>
     </main>
+
+    <!-- JavaScript -->
+    <script src="../scripts/allissues.js"></script>
 </body>
 </html>
