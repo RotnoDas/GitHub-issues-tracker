@@ -111,9 +111,26 @@ const allButton = document.getElementById("all-button");
 allButton.addEventListener('click', () => {
     removeActiveButton();
     allButton.classList.add("active-button");
+    const allIssuesContainer = document.getElementById('all-issues-container');
+    allIssuesContainer.classList.remove('hidden');
+    const closedIssuesContainer = document.getElementById('closed-issues-container');
+    closedIssuesContainer.classList.add('hidden');
+    const openIssuesContainer = document.getElementById('open-issues-container');
+    openIssuesContainer.classList.add('hidden');
+    const allCount = document.getElementById('all-count');
+    allCount.classList.remove('hidden');
+    const openCount = document.getElementById('open-count');
+    openCount.classList.add('hidden');
+    const closedCount = document.getElementById('closed-count');
+    closedCount.classList.add('hidden');
     loadAllIssues();
 });
 
+const allCount = document.getElementById('all-count');
+allCount.classList.remove('hidden');
+const openCount = document.getElementById('open-count');
+openCount.classList.add('hidden');
+const closedCount = document.getElementById('closed-count');
+closedCount.classList.add('hidden');
 allButton.classList.add("active-button");
 loadAllIssues();
-

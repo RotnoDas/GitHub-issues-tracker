@@ -67,7 +67,9 @@
                             <img src="../assets/Aperture.png" alt="">
                         </div>
                         <div>
-                            <h1 class="geist-font font-semibold text-[20px] leading-[auto] tracking-[0%] text-[#1F2937]"><span id="all-issue-count"></span> Issues</h1>
+                            <h1 id="all-count" class="geist-font font-semibold text-[20px] leading-[auto] tracking-[0%] text-[#1F2937]"><span id="all-issue-count"></span> Issues</h1>
+                            <h1 id="open-count" class="geist-font font-semibold text-[20px] leading-[auto] tracking-[0%] text-[#1F2937]"><span id="open-issue-count"></span> Issues</h1>
+                            <h1 id="closed-count" class="geist-font font-semibold text-[20px] leading-[auto] tracking-[0%] text-[#1F2937]"><span id="closed-issue-count"></span> Issues</h1>
                             <p class="geist-font font-normal text-[16px] leading-[auto] tracking-[0%] text-[#64748B]">Track and manage your project issues</p>
                         </div>
                     </div>
@@ -128,6 +130,14 @@
 
                     </div>
 
+                    <div id="open-issues-container" class="grid grid-cols-4 gap-3 hidden">
+
+                    </div>
+
+                    <div id="closed-issues-container" class="grid grid-cols-4 gap-3 hidden">
+
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -135,5 +145,7 @@
 
     <!-- JavaScript -->
     <script src="../scripts/allissues.js"></script>
+    <script src="../scripts/openissues.js"></script>
+    <script src="../scripts/closedissues.js"></script>
 </body>
 </html>
