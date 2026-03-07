@@ -8,6 +8,13 @@ const manageLoading = (status) => {
     }
 };
 
+const removeActiveButton = () => {
+    const buttons = document.querySelectorAll('#all-button, #open-button, #closed-button');
+    buttons.forEach((button) => {
+        button.classList.remove('active-button');
+    })
+};
+
 const createLabelElements = (labels) => {
     const labelElements = labels.map((label) => {
         if(label === "bug") {
@@ -23,21 +30,27 @@ const createLabelElements = (labels) => {
             return element;
         }
         else if(label === "good first issue") {
-            const element = ``;
+            const element = `<div class="badge badge-xl p-2 rounded-[100px] bg-[#FFDEAD] border border-[#FFBF00] geist-font font-medium text-[16px] leading-[100%] tracking-[0%] text-[#8B4000] uppercase"><i class="fa-solid fa-circle-exclamation"></i>${label}</div>`;
             return element;
         }
         else if(label === "documentation") {
-            const element = ``;
+            const element = `<div class="badge badge-xl p-2 rounded-[100px] bg-[#F0FFFF] border border-[#0096FF] geist-font font-medium text-[16px] leading-[100%] tracking-[0%] text-[#00008B] uppercase"><i class="fa-solid fa-file-lines"></i>${label}</div>`;
             return element;
         }
     })
     return labelElements.join(' ');
 };
 
+const counter = () => {
+    const allIssuesContainer = document.getElementById('all-issues-container');
+    const issuesNumber = allIssuesContainer.childElementCount;
+    const allIssueCount = document.getElementById('all-issue-count');
+    allIssueCount.innerText = issuesNumber;
+}
+
 
 const loadAllIssues = () => {
     manageLoading(true);
-
     const url = 'https://phi-lab-server.vercel.app/api/v1/lab/issues';
     fetch(url)
         .then((response) => {
@@ -54,7 +67,7 @@ const displayAllIssues = (allIssuesData) => {
     allIssuesData.forEach((issue) => {
         const issueCard = document.createElement('div');
         issueCard.innerHTML = `
-            <div class="issue-card bg-[#FFFFFF] border-t-4 ${issue.priority === "high" || issue.priority === "medium" ? 'border-t-[#00A96E]' : 'border-t-[#A855F7]'} rounded-sm shadow-[0px_3px_6px_rgba(0,0,0,0.08)]">
+            <div class="issue-card bg-[#FFFFFF] border-t-4 ${issue.status === "open" ? 'border-t-[#00A96E]' : 'border-t-[#A855F7]'} rounded-sm shadow-[0px_3px_6px_rgba(0,0,0,0.08)]">
                 <div class="border-b border-b-[#E4E4E7] p-4 space-y-4">
                     <div class="flex items-center justify-between">
                         <div>
@@ -72,19 +85,35 @@ const displayAllIssues = (allIssuesData) => {
                         <h1 class="geist-font font-semibold text-[20px] leading-[auto] tracking-[0%] text-[#000000]">${issue.title}</h1>
                         <p class="geist-font font-normal text-[16px] leading-[auto] tracking-[0%] text-[#64748B]">${issue.description}</p>
                     </div>
-                    <div>
+                    <div class="flex items-center gap-2 flex-wrap">
                         ${createLabelElements(issue.labels)}
                     </div>
                 </div>
                 <div class="p-4 space-y-2">
-                    <p class="geist-font font-normal text-[18px] leading-[auto] tracking-[0%] text-[#64748B]">#1 by john_doe</p>
-                    <p class="geist-font font-normal text-[18px] leading-[auto] tracking-[0%] text-[#64748B]">1/15/2024</p>
+                    <div class="flex items-center justify-between">
+                        <p class="geist-font font-normal text-[13px] leading-[auto] tracking-[0%] text-[#64748B]">#${issue.id} by ${issue.author}</p>
+                        <p class="geist-font font-normal text-[13px] leading-[auto] tracking-[0%] text-[#64748B]">${new Date(issue.createdAt).toLocaleDateString()}</p>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <p class="geist-font font-normal text-[13px] leading-[auto] tracking-[0%] text-[#64748B]">Assignee: ${issue.assignee}</p>
+                        <p class="geist-font font-normal text-[13px] leading-[auto] tracking-[0%] text-[#64748B]">Updated: ${new Date(issue.updatedAt).toLocaleDateString()}</p>
+                    </div>
                 </div>
             </div>
         `;
         allIssuesContainer.appendChild(issueCard);
+        counter();
     });
     manageLoading(false);
 };
 
+const allButton = document.getElementById("all-button");
+allButton.addEventListener('click', () => {
+    removeActiveButton();
+    allButton.classList.add("active-button");
+    loadAllIssues();
+});
+
+allButton.classList.add("active-button");
 loadAllIssues();
+

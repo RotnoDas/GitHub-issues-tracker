@@ -55,9 +55,9 @@
     <main>
         <div class="min-h-screen bg-[#F8FAFC] px-[245px] py-[60px] space-y-4">
             <div class="p-6 rounded-lg bg-[#FFFFFF] border border-[#FFFFFF] shadow-[0px_1px_6px_rgba(0,0,0,0.08)] space-x-2">
-                <button class="btn w-[120px] px-3 py-2 rounded-sm bg-[#FFFFFF] border border-[#E4E4E7] geist-font font-medium text-[16px] leading-[100%] tracking-[0%] text-[#64748B]">All</button>
-                <button class="btn w-[120px] px-3 py-2 rounded-sm bg-[#FFFFFF] border border-[#E4E4E7] geist-font font-medium text-[16px] leading-[100%] tracking-[0%] text-[#64748B]">Open</button>
-                <button class="btn w-[120px] px-3 py-2 rounded-sm bg-[#FFFFFF] border border-[#E4E4E7] geist-font font-medium text-[16px] leading-[100%] tracking-[0%] text-[#64748B]">Closed</button>
+                <button id="all-button" class="btn w-[120px] px-3 py-2 rounded-sm bg-[#FFFFFF] border border-[#E4E4E7] geist-font font-medium text-[16px] leading-[100%] tracking-[0%] text-[#64748B]">All</button>
+                <button id="open-button" class="btn w-[120px] px-3 py-2 rounded-sm bg-[#FFFFFF] border border-[#E4E4E7] geist-font font-medium text-[16px] leading-[100%] tracking-[0%] text-[#64748B]">Open</button>
+                <button id="closed-button" class="btn w-[120px] px-3 py-2 rounded-sm bg-[#FFFFFF] border border-[#E4E4E7] geist-font font-medium text-[16px] leading-[100%] tracking-[0%] text-[#64748B]">Closed</button>
             </div>
 
             <div class="shadow-[0px_5px_10px_rgba(0,0,0,0.08)]">
@@ -67,7 +67,7 @@
                             <img src="../assets/Aperture.png" alt="">
                         </div>
                         <div>
-                            <h1 class="geist-font font-semibold text-[20px] leading-[auto] tracking-[0%] text-[#1F2937]"><span>50</span> Issues</h1>
+                            <h1 class="geist-font font-semibold text-[20px] leading-[auto] tracking-[0%] text-[#1F2937]"><span id="all-issue-count"></span> Issues</h1>
                             <p class="geist-font font-normal text-[16px] leading-[auto] tracking-[0%] text-[#64748B]">Track and manage your project issues</p>
                         </div>
                     </div>
@@ -91,7 +91,7 @@
 
                     <div id="all-issues-container" class="grid grid-cols-4 gap-3">
 
-                        <div class="issue-card bg-[#FFFFFF] border-t-4 border-[#00A96E] rounded-sm shadow-[0px_3px_6px_rgba(0,0,0,0.08)]">
+                        <!-- <div class="issue-card bg-[#FFFFFF] border-t-4 border-[#00A96E] rounded-sm shadow-[0px_3px_6px_rgba(0,0,0,0.08)]">
                             <div class="border-b border-b-[#E4E4E7] p-4 space-y-4">
                                 <div class="flex items-center justify-between">
                                     <div>
@@ -106,17 +106,25 @@
                                     <h1 class="geist-font font-semibold text-[20px] leading-[auto] tracking-[0%] text-[#000000]">Fix navigation menu on mobile devices</h1>
                                     <p class="geist-font font-normal text-[16px] leading-[auto] tracking-[0%] text-[#64748B]">The navigation menu doesn't collapse properly on mobile devices...</p>
                                 </div>
-                                <div>
+                                <div class="flex items-center gap-1 flex-wrap">
                                     <div class="badge badge-xl p-2 rounded-[100px] bg-[#FEECEC] border border-[#FECACA] geist-font font-medium text-[16px] leading-[100%] tracking-[0%] text-[#EF4444]"><i class="fa-solid fa-bug"></i>BUG</div>
                                     <div class="badge badge-xl p-2 rounded-[100px] bg-[#FFF8DB] border border-[#FDE68A] geist-font font-medium text-[16px] leading-[100%] tracking-[0%] text-[#D97706]"><i class="fa-solid fa-life-ring"></i>HELP WANTED</div>
                                     <div class="badge badge-xl p-2 rounded-[100px] bg-[#DEFCE8] border border-[#BBF7D0] geist-font font-medium text-[16px] leading-[100%] tracking-[0%] text-[#16A34A]"><i class="fa-solid fa-wand-magic-sparkles"></i>ENHANCEMENT</div>
+                                    <div class="badge badge-xl p-2 rounded-[100px] bg-[#FBCEB1] border border-[#FFBF00] geist-font font-medium text-[16px] leading-[100%] tracking-[0%] text-[#D27D2D]"><i class="fa-solid fa-circle-exclamation"></i>GOOD FIRST ISSUE</div>
+                                    <div class="badge badge-xl p-2 rounded-[100px] bg-[#F0FFFF] border border-[#0096FF] geist-font font-medium text-[16px] leading-[100%] tracking-[0%] text-[#00008B]"><i class="fa-solid fa-file-lines"></i>DOCUMENTATION</div>
                                 </div>
                             </div>
                             <div class="p-4 space-y-2">
-                                <p class="geist-font font-normal text-[18px] leading-[auto] tracking-[0%] text-[#64748B]">#1 by john_doe</p>
-                                <p class="geist-font font-normal text-[18px] leading-[auto] tracking-[0%] text-[#64748B]">1/15/2024</p>
+                                <div class="flex items-center justify-between">
+                                    <p class="geist-font font-normal text-[18px] leading-[auto] tracking-[0%] text-[#64748B]">#1 by john_doe</p>
+                                    <p class="geist-font font-normal text-[18px] leading-[auto] tracking-[0%] text-[#64748B]">1/15/2024</p>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <p class="geist-font font-normal text-[18px] leading-[auto] tracking-[0%] text-[#64748B]">Assignee: </p>
+                                    <p class="geist-font font-normal text-[18px] leading-[auto] tracking-[0%] text-[#64748B]">Updated: </p>
+                                </div>
                             </div>
-                        </div>
+                        </div> -->
 
                     </div>
 

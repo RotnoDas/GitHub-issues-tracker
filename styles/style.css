@@ -3,3 +3,8 @@
 .geist-font {
     font-family: "Geist", sans-serif;
 }
+
+.active-button {
+    background-color: #4A00FF;
+    color: #FFFFFF;
+}
