@@ -15,10 +15,75 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to GitHub Issue Tracker</h1>
+        <div class="navbar px-20 py-4 bg-[#F8FAFC] shadow-sm">
+            <div class="flex-1 px-1">
+                <a href="#" class="btn btn-ghost text-xl">
+                    <img src="../assets/github-logo.png" alt="Navbar Logo" class="w-9">
+                    <p class="geist-font font-semibold text-[24px] leading-[auto] tracking-[0%] text-[#1F2937]">GitHub Issues Tracker</p>
+                </a>
+            </div>
+            <div class="flex gap-2 items-center">
+                <div>
+                    <label class="input outline-none border border-[#E4E4E7] bg-[#FFFFFF] rounded-sm">
+                        <svg class="h-[1em] opacity-50 geist-font font-normal text-[16px] leading-4 tracking-[0%] text-[#64748B]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <g
+                            stroke-linejoin="round"
+                            stroke-linecap="round"
+                            stroke-width="2.5"
+                            fill="none"
+                            stroke="currentColor"
+                            >
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.3-4.3"></path>
+                            </g>
+                        </svg>
+                        <input type="text" class="grow geist-font font-normal text-[16px] leading-4 tracking-[0%] text-[#64748B]" placeholder="Search Issues..." />
+                    </label>
+                </div>
+                <div>
+                    <button class="btn px-4 py-3 geist-font font-semibold text-[14px] leading-[auto] tracking-[0%] rounded-sm">Search</button>
+                </div>
+                <div>
+                    <button class="btn px-4 py-3 geist-font font-semibold text-[14px] leading-[auto] tracking-[0%] rounded-sm bg-[#4A00FF] text-[#FFFFFF]">+ New Issue</button>
+                </div>
+            </div>
+        </div>
     </header>
     <main>
+        <div class="min-h-screen bg-[#F8FAFC] px-[245px] py-[60px] space-y-4">
+            <div class="p-6 rounded-lg bg-[#FFFFFF] border border-[#FFFFFF] shadow-[0px_1px_6px_rgba(0,0,0,0.08)] space-x-2">
+                <button class="btn w-[120px] px-3 py-2 rounded-sm bg-[#FFFFFF] border border-[#E4E4E7] geist-font font-medium text-[16px] leading-[100%] tracking-[0%] text-[#64748B]">All</button>
+                <button class="btn w-[120px] px-3 py-2 rounded-sm bg-[#FFFFFF] border border-[#E4E4E7] geist-font font-medium text-[16px] leading-[100%] tracking-[0%] text-[#64748B]">Open</button>
+                <button class="btn w-[120px] px-3 py-2 rounded-sm bg-[#FFFFFF] border border-[#E4E4E7] geist-font font-medium text-[16px] leading-[100%] tracking-[0%] text-[#64748B]">Closed</button>
+            </div>
 
+            <div class="shadow-[0px_5px_10px_rgba(0,0,0,0.08)]">
+                <div class="py-6 px-6 bg-[#FFFFFF] border-b border-[#E4E4E7] flex items-center justify-between rounded-t-lg">
+                    <div class="flex items-center justify-center gap-4">
+                        <div class="w-[50px] h-[50px] rounded-full bg-[#ECE4FF] flex items-center justify-center">
+                            <img src="../assets/Aperture.png" alt="">
+                        </div>
+                        <div>
+                            <h1 class="geist-font font-semibold text-[20px] leading-[auto] tracking-[0%] text-[#1F2937]"><span>50</span> Issues</h1>
+                            <p class="geist-font font-normal text-[16px] leading-[auto] tracking-[0%] text-[#64748B]">Track and manage your project issues</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center gap-4">
+                        <div class="flex items-center justify-center gap-2">
+                            <div aria-label="success" class="status status-success"></div>
+                            <p class="geist-font font-medium text-[16px] leading-[auto] tracking-[0%] text-[#64748B]">Open</p>
+                        </div>
+                        <div class="flex items-center justify-center gap-2">
+                            <div aria-label="status" class="status status-primary"></div>
+                            <p class="geist-font font-medium text-[16px] leading-[auto] tracking-[0%] text-[#64748B]">Closed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#FBFBFB] px-6 py-6 rounded-b-lg">
+
+                </div>
+            </div>
+        </div>
     </main>
 </body>
 </html>
