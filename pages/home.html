@@ -93,7 +93,7 @@
 
                     <div id="all-issues-container" class="grid grid-cols-4 gap-3">
 
-                        <!-- <div class="issue-card bg-[#FFFFFF] border-t-4 border-[#00A96E] rounded-sm shadow-[0px_3px_6px_rgba(0,0,0,0.08)]">
+                        <!-- <div id="card" class="issue-card bg-[#FFFFFF] border-t-4 border-[#00A96E] rounded-sm shadow-[0px_3px_6px_rgba(0,0,0,0.08)]">
                             <div class="border-b border-b-[#E4E4E7] p-4 space-y-4">
                                 <div class="flex items-center justify-between">
                                     <div>
@@ -138,14 +138,68 @@
 
                     </div>
 
+
                 </div>
             </div>
         </div>
     </main>
 
+
+    <!-- Open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+        <!-- <div class="modal-box space-y-6">
+            <div>
+                <h3 class="text-lg font-bold">Fix broken image uploads</h3>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="bg-[#00A96E] p-2 rounded-[100px] w-fit flex items-center justify-center">
+                    <p class="geist-font font-medium text-[12px] leading-[100%] tracking-[0%] text-[#FFFFFF]">Opened</p>
+                </div>
+                <div class="flex items-center justify-center">
+                    <span class="status"></span>
+                </div>
+                <div>
+                    <p class="geist-font font-normal text-[12px] leading-[auto] tracking-[0%] text-[#64748B]">Opened by Fahim Ahmed</p>
+                </div>
+                <div class="flex items-center justify-center">
+                    <span class="status"></span>
+                </div>
+                <div>
+                    <p class="geist-font font-normal text-[12px] leading-[auto] tracking-[0%] text-[#64748B]">22/02/2026</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-1 flex-wrap">
+                <div class="badge badge-xl p-2 rounded-[100px] bg-[#FEECEC] border border-[#FECACA] geist-font font-medium text-[16px] leading-[100%] tracking-[0%] text-[#EF4444]"><i class="fa-solid fa-bug"></i>BUG</div>
+                <div class="badge badge-xl p-2 rounded-[100px] bg-[#FFF8DB] border border-[#FDE68A] geist-font font-medium text-[16px] leading-[100%] tracking-[0%] text-[#D97706]"><i class="fa-solid fa-life-ring"></i>HELP WANTED</div>
+            </div>
+            <div>
+                <p class="geist-font font-normal text-[16px] leading-[auto] tracking-[0%] text-[#64748B]">The navigation menu doesn't collapse properly on mobile devices. Need to fix the responsive behavior.</p>
+            </div>
+            <div class="bg-[#F8FAFC] p-4 rounded-lg flex items-center justify-start">
+                <div class="w-[50%]">   
+                    <p class="geist-font font-normal text-[16px] leading-[auto] tracking-[0%] text-[#64748B]">Assignee:</p>
+                    <p class="geist-font font-semibold text-[16px] leading-[auto] tracking-[0%] text-[#1F2937]">Fahim Ahmed</p>
+                </div>
+                <div class="w-[50%]">
+                    <p class="geist-font font-normal text-[16px] leading-[auto] tracking-[0%] text-[#64748B]">Priority:</p>
+                    <div class="p-2 rounded-[100px] bg-[#EF4444] flex items-center justify-center w-fit">
+                        <p class="geist-font font-medium text-[12px] leading-[100%] tracking-[0%] text-[#FFFFFF]">HIGH</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-action">
+                <form method="dialog">
+                    <button class="btn px-4 py-3 bg-[#4A00FF] rounded-sm geist-font font-semibold text-[16px] leading-[auto] tracking-[0%] text-[#FFFFFF]">Close</button>
+                </form>
+            </div>
+        </div> -->
+    </dialog>
+
     <!-- JavaScript -->
     <script src="../scripts/allissues.js"></script>
     <script src="../scripts/openissues.js"></script>
     <script src="../scripts/closedissues.js"></script>
+    <script src="../scripts/modal.js"></script>
 </body>
 </html>

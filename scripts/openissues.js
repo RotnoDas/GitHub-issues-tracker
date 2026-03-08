@@ -22,7 +22,7 @@ const displayOpenIssues = (openIssues) => {
     openIssues.forEach((issue) => {
         const openDiv = document.createElement('div');
         openDiv.innerHTML = `
-            <div class="issue-card bg-[#FFFFFF] border-t-4 ${issue.status === "open" ? 'border-t-[#00A96E]' : 'border-t-[#A855F7]'} rounded-sm shadow-[0px_3px_6px_rgba(0,0,0,0.08)]">
+            <div onclick="showDetails(${issue.id})"class="issue-card bg-[#FFFFFF] border-t-4 ${issue.status === "open" ? 'border-t-[#00A96E]' : 'border-t-[#A855F7]'} rounded-sm shadow-[0px_3px_6px_rgba(0,0,0,0.08)] h-full">
                 <div class="border-b border-b-[#E4E4E7] p-4 space-y-4">
                     <div class="flex items-center justify-between">
                         <div>
