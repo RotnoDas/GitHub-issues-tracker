@@ -43,4 +43,5 @@ searchButton.addEventListener('click', () => {
 const clearSearchValue = () => {
     const searchInput = document.getElementById('search-input');
     searchInput.value = "";
+    manageLoading(false);
 }
