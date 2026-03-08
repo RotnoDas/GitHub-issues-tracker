@@ -5,6 +5,7 @@ searchButton.addEventListener('click', () => {
     const searchInput = document.getElementById('search-input');
     const searchValue = searchInput.value.trim().toLowerCase();
     if(searchValue === "") {
+        alert("Please enter a search term!");
         loadAllIssues();
         const allButton = document.getElementById("all-button");
         allButton.classList.add("active-button");
