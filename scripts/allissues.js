@@ -61,6 +61,8 @@ const loadAllIssues = () => {
         })
 };
 const displayAllIssues = (allIssuesData) => {
+    clearSearchValue();
+    manageLoading(false);
     const allIssuesContainer = document.getElementById('all-issues-container');
     allIssuesContainer.innerHTML = "";
 
