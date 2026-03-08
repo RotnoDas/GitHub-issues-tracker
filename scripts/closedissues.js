@@ -16,7 +16,7 @@ const displayClosedIssues = (closedIssues) => {
                 <div class="border-b border-b-[#E4E4E7] p-4 space-y-4">
                     <div class="flex items-center justify-between">
                         <div>
-                            ${issue.priority === "high" || issue.priority === "medium" ? `<img src="../assets/Open-Status.png" alt="Open Status" class="w-6 h-6">` : `<img src="../assets/Closed- Status .png" alt="Closed Status" class="w-6 h-6">`}
+                            ${issue.priority === "high" || issue.priority === "medium" ? `<img src="./assets/Open-Status.png" alt="Open Status" class="w-6 h-6">` : `<img src="./assets/Closed- Status .png" alt="Closed Status" class="w-6 h-6">`}
                         </div>
                         <div>
                             ${issue.priority === "high" ? 
