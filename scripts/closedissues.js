@@ -81,10 +81,13 @@ closedButton.addEventListener('click', () => {
     manageLoading(true);
     const allIssuesContainer = document.getElementById('all-issues-container');
     allIssuesContainer.classList.add('hidden');
+    allIssuesContainer.classList.remove('grid');
     const closedIssuesContainer = document.getElementById('closed-issues-container');
     closedIssuesContainer.classList.remove('hidden');
+    closedIssuesContainer.classList.add('grid');
     const openIssuesContainer = document.getElementById('open-issues-container');
     openIssuesContainer.classList.add('hidden');
+    openIssuesContainer.classList.remove('grid');
     const allCount = document.getElementById('all-count');
     allCount.classList.add('hidden');
     const openCount = document.getElementById('open-count');

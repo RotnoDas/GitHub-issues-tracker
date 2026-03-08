@@ -82,10 +82,13 @@ openButton.addEventListener('click', () => {
     manageLoading(true);
     const allIssuesContainer = document.getElementById('all-issues-container');
     allIssuesContainer.classList.add('hidden');
+    allIssuesContainer.classList.remove('grid');
     const closedIssuesContainer = document.getElementById('closed-issues-container');
     closedIssuesContainer.classList.add('hidden');
+    closedIssuesContainer.classList.remove('grid');
     const openIssuesContainer = document.getElementById('open-issues-container');
     openIssuesContainer.classList.remove('hidden');
+    openIssuesContainer.classList.add('grid');
     const allCount = document.getElementById('all-count');
     allCount.classList.add('hidden');
     const openCount = document.getElementById('open-count');

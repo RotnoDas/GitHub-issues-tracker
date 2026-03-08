@@ -18,11 +18,11 @@
 </head>
 <body>
     <header>
-        <div class="navbar px-20 py-4 bg-[#F8FAFC] shadow-sm">
+        <div class="navbar px-1 sm:px-2 md:px-10 lg:px-20 py-4 bg-[#F8FAFC] shadow-sm">
             <div class="flex-1 px-1">
-                <a href="#" class="btn btn-ghost text-xl">
-                    <img src="../assets/github-logo.png" alt="Navbar Logo" class="w-9">
-                    <p class="geist-font font-semibold text-[24px] leading-[auto] tracking-[0%] text-[#1F2937]">GitHub Issues Tracker</p>
+                <a href="#" class="btn btn-ghost text-xl max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center max-sm:gap-2">
+                    <img src="../assets/github-logo.png" alt="Navbar Logo" class="w-9 max-sm:hidden max-md:hidden">
+                    <p class="geist-font font-normal sm:font-medium md:font-semibold max-sm:text-[12px] text-[16px] sm:text-[20px] md:text-[20px] lg:text-[24px] leading-[auto] tracking-[0%] text-[#1F2937]">GitHub Issues Tracker</p>
                 </a>
             </div>
             <div class="flex gap-2 items-center">
@@ -46,14 +46,14 @@
                 <div>
                     <button id="search-button" class="btn px-4 py-3 geist-font font-semibold text-[14px] leading-[auto] tracking-[0%] rounded-sm">Search</button>
                 </div>
-                <div>
+                <div class="max-sm:hidden max-md:hidden max-lg:hidden">
                     <button class="btn px-4 py-3 geist-font font-semibold text-[14px] leading-[auto] tracking-[0%] rounded-sm bg-[#4A00FF] text-[#FFFFFF]">+ New Issue</button>
                 </div>
             </div>
         </div>
     </header>
     <main>
-        <div class="min-h-screen bg-[#F8FAFC] px-[245px] py-[60px] space-y-4">
+        <div class="min-h-screen bg-[#F8FAFC] max-sm:px-1 max-sm:py-4 sm:px-2 sm:py-5 md:px-4 md:py-8 lg:px-10 lg:py-10 xl:px-20 xl:py-10 2xl:px-[245px] 2xl:py-[60px] space-y-4">
             <div class="p-6 rounded-lg bg-[#FFFFFF] border border-[#FFFFFF] shadow-[0px_1px_6px_rgba(0,0,0,0.08)] space-x-2">
                 <button id="all-button" class="btn w-[120px] px-3 py-2 rounded-sm bg-[#FFFFFF] border border-[#E4E4E7] geist-font font-medium text-[16px] leading-[100%] tracking-[0%] text-[#64748B]">All</button>
                 <button id="open-button" class="btn w-[120px] px-3 py-2 rounded-sm bg-[#FFFFFF] border border-[#E4E4E7] geist-font font-medium text-[16px] leading-[100%] tracking-[0%] text-[#64748B]">Open</button>
@@ -63,14 +63,14 @@
             <div class="shadow-[0px_5px_10px_rgba(0,0,0,0.08)]">
                 <div class="py-6 px-6 bg-[#FFFFFF] border-b border-[#E4E4E7] flex items-center justify-between rounded-t-lg">
                     <div class="flex items-center justify-center gap-4">
-                        <div class="w-[50px] h-[50px] rounded-full bg-[#ECE4FF] flex items-center justify-center">
+                        <div class="w-[50px] h-[50px] rounded-full bg-[#ECE4FF] flex items-center justify-center max-sm:hidden">
                             <img src="../assets/Aperture.png" alt="">
                         </div>
                         <div>
                             <h1 id="all-count" class="geist-font font-semibold text-[20px] leading-[auto] tracking-[0%] text-[#1F2937]"><span id="all-issue-count"></span> Issues</h1>
                             <h1 id="open-count" class="geist-font font-semibold text-[20px] leading-[auto] tracking-[0%] text-[#1F2937]"><span id="open-issue-count"></span> Issues</h1>
                             <h1 id="closed-count" class="geist-font font-semibold text-[20px] leading-[auto] tracking-[0%] text-[#1F2937]"><span id="closed-issue-count"></span> Issues</h1>
-                            <p class="geist-font font-normal text-[16px] leading-[auto] tracking-[0%] text-[#64748B]">Track and manage your project issues</p>
+                            <p class="geist-font font-normal max-sm:text-[14px] text-[16px] leading-[auto] tracking-[0%] text-[#64748B]">Track and manage your project issues</p>
                         </div>
                     </div>
                     <div class="flex items-center justify-center gap-4">
@@ -91,7 +91,7 @@
                         <span class="loading loading-dots loading-xl"></span>
                     </div>
 
-                    <div id="all-issues-container" class="grid grid-cols-4 gap-3">
+                    <div id="all-issues-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3">
 
                         <!-- <div id="card" class="issue-card bg-[#FFFFFF] border-t-4 border-[#00A96E] rounded-sm shadow-[0px_3px_6px_rgba(0,0,0,0.08)]">
                             <div class="border-b border-b-[#E4E4E7] p-4 space-y-4">
@@ -130,11 +130,11 @@
 
                     </div>
 
-                    <div id="open-issues-container" class="grid grid-cols-4 gap-3 hidden">
+                    <div id="open-issues-container" class="hidden grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3">
 
                     </div>
 
-                    <div id="closed-issues-container" class="grid grid-cols-4 gap-3 hidden">
+                    <div id="closed-issues-container" class="hidden grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3">
 
                     </div>
 

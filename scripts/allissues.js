@@ -115,10 +115,13 @@ allButton.addEventListener('click', () => {
     allButton.classList.add("active-button");
     const allIssuesContainer = document.getElementById('all-issues-container');
     allIssuesContainer.classList.remove('hidden');
+    allIssuesContainer.classList.add('grid');
     const closedIssuesContainer = document.getElementById('closed-issues-container');
     closedIssuesContainer.classList.add('hidden');
+    closedIssuesContainer.classList.remove('grid');
     const openIssuesContainer = document.getElementById('open-issues-container');
     openIssuesContainer.classList.add('hidden');
+    openIssuesContainer.classList.remove('grid');
     const allCount = document.getElementById('all-count');
     allCount.classList.remove('hidden');
     const openCount = document.getElementById('open-count');
